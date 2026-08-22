@@ -51,7 +51,7 @@ body {
             rgba(0, 0, 0, 0.65),
             rgba(0, 0, 0, 0.72)
         ),
-        url("./IMAGEN/mansion.jpg");
+        url("IMAGEN/mansion.jpg");
 
     background-size: cover;
     background-position: center;
@@ -347,7 +347,7 @@ body {
             rgba(0, 0, 0, 0.75),
             rgba(0, 0, 0, 0.95)
         ),
-        url("./IMAGEN/iNTERIOR.png");
+        url("IMAGEN/iNTERIOR.png");
 
     background-size: cover;
 
@@ -600,10 +600,8 @@ body {
 
 
 /* =========================================================
-   =========================================================
    MÁSCARA DORADA — ESCENA DE REVELACIÓN
-   =========================================================
-   ========================================================= */
+========================================================= */
 
 .mascara-final {
 
@@ -1268,11 +1266,9 @@ body {
 
 
 /* =========================================================
-   =========================================================
    FINAL — MANSIÓN VALMONT
    OCULTO HASTA PRESIONAR EL BOTÓN
-   =========================================================
-   ========================================================= */
+========================================================= */
 
 .final-valmont {
 
@@ -2192,143 +2188,5 @@ body {
         font-size: 17px;
 
         letter-spacing: 5px;
-    }
-
-
-    .final-secreto {
-
-        font-size: 12px;
-
-        letter-spacing: 3px;
-
-        line-height: 2;
-    }
-
-
-    .final-separador {
-
-        margin: 45px auto;
-    }
-
-
-    .final-contenido h2 {
-
-        font-size: 30px;
-
-        letter-spacing: 6px;
-
-        line-height: 1.5;
-    }
-
-
-    .final-subtitulo {
-
-        font-size: 10px;
-
-        letter-spacing: 3px;
-
-        line-height: 1.8;
-    }
-
-
-    .final-firma {
-
-        font-size: 9px;
-
-        letter-spacing: 4px;
-    }
-
-
-    .final-valmont::before {
-
-        width: 400px;
-
-        height: 400px;
-    }
-}
-
-
-/* =========================================================
-   CELULARES PEQUEÑOS
-========================================================= */
-
-@media (max-width: 450px) {
-
-    .hero h1 {
-
-        font-size: 30px;
-
-        letter-spacing: 3px;
-    }
-
-
-    .hero h2 {
-
-        font-size: 18px;
-    }
-
-
-    .presenta {
-
-        font-size: 10px;
-
-        letter-spacing: 4px;
-    }
-
-
-    .mansion-image img {
-
-        height: 320px;
-    }
-
-
-    .brillo-mascara {
-
-        width: 300px;
-
-        height: 300px;
-    }
-
-
-    .mascara-imagen img {
-
-        width: 190px;
-    }
-
-
-    .final-contenido h2 {
-
-        font-size: 25px;
-
-        letter-spacing: 4px;
-    }
-
-
-    .final-frase {
-
-        font-size: 15px;
-
-        letter-spacing: 4px;
-    }
-}
-
-
-/* =========================================================
-   REDUCIR ANIMACIONES SI EL DISPOSITIVO LO SOLICITA
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        scroll-behavior: auto !important;
-
-        transition-duration: 0.01ms !important;
     }
 }
