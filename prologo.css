@@ -1,0 +1,2334 @@
+
+/* =========================================================
+   MANSIÓN VALMONT
+   CSS PRINCIPAL — EXPERIENCIA CINEMATOGRÁFICA
+========================================================= */
+
+
+/* =========================================================
+   RESETEO
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #050505;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PORTADA / HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.72)
+        ),
+        url("./IMAGEN/mansion.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: zoomMansion 20s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   NIEBLA DE LA PORTADA
+========================================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    top: -30%;
+    left: -30%;
+
+    width: 160%;
+    height: 160%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(220, 220, 220, 0.22),
+            transparent 45%
+        );
+
+    filter: blur(45px);
+
+    animation: niebla 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   VIÑETA
+========================================================= */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 35%,
+            rgba(0, 0, 0, 0.7) 100%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CONTENIDO HERO
+========================================================= */
+
+.overlay {
+    position: relative;
+
+    width: 90%;
+    max-width: 1000px;
+
+    z-index: 5;
+
+    animation: aparecer 3s ease forwards;
+}
+
+
+/* =========================================================
+   PRESENTACIÓN
+========================================================= */
+
+.presenta {
+    color: #D4AF37;
+
+    text-transform: uppercase;
+
+    letter-spacing: 8px;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 8px rgba(212, 175, 55, 0.6),
+        0 0 25px rgba(212, 175, 55, 0.3);
+}
+
+
+/* =========================================================
+   TÍTULO HERO
+========================================================= */
+
+.hero h1 {
+    font-size: 72px;
+
+    margin-bottom: 15px;
+
+    letter-spacing: 12px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px rgba(212, 175, 55, 0.5),
+        0 0 25px rgba(212, 175, 55, 0.3);
+
+    animation:
+        tituloEntrada 4s ease forwards;
+}
+
+
+/* =========================================================
+   SUBTÍTULO HERO
+========================================================= */
+
+.hero h2 {
+    font-size: 36px;
+
+    font-weight: 300;
+
+    margin-bottom: 35px;
+
+    color: #D4AF37;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 8px rgba(212, 175, 55, 0.6),
+        0 0 20px rgba(212, 175, 55, 0.3);
+
+    animation:
+        aparecerSubtitulo 5s ease forwards;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll {
+    margin-top: 70px;
+
+    color: #D4AF37;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 8px rgba(212, 175, 55, 0.6),
+        0 0 20px rgba(212, 175, 55, 0.3);
+
+    animation:
+        bajar 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMACIONES HERO
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes tituloEntrada {
+
+    from {
+        opacity: 0;
+        letter-spacing: 40px;
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: 12px;
+        filter: blur(0);
+    }
+}
+
+
+@keyframes aparecerSubtitulo {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes bajar {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(15px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+
+@keyframes niebla {
+
+    from {
+        transform:
+            translateX(-120px)
+            scale(1);
+
+        opacity: 0.4;
+    }
+
+    to {
+        transform:
+            translateX(120px)
+            scale(1.1);
+
+        opacity: 0.9;
+    }
+}
+
+
+@keyframes zoomMansion {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 110%;
+    }
+}
+
+
+/* =========================================================
+   ESCENA DE LA MANSIÓN
+========================================================= */
+
+.mansion {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    padding: 100px 6%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.95)
+        ),
+        url("./IMAGEN/iNTERIOR.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   VIÑETA MANSIÓN
+========================================================= */
+
+.mansion::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 15%,
+            rgba(0, 0, 0, 0.8) 100%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   IMAGEN MANSIÓN
+========================================================= */
+
+.mansion-image {
+
+    position: relative;
+
+    width: 48%;
+
+    z-index: 2;
+
+    animation:
+        aparecerImagen 2s ease forwards;
+}
+
+
+.mansion-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 600px;
+
+    object-fit: cover;
+
+    filter:
+        brightness(70%)
+        contrast(120%);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 50px rgba(0, 0, 0, 0.9);
+
+    animation:
+        zoomCinematico 12s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   TEXTO MANSIÓN
+========================================================= */
+
+.mansion-contex {
+
+    position: relative;
+
+    width: 42%;
+
+    z-index: 3;
+
+    animation:
+        aparecerTexto 2.5s ease forwards;
+}
+
+
+.mansion-contex h2 {
+
+    color: #c9a227;
+
+    font-size: 45px;
+
+    font-family: Georgia, serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 8px rgba(201, 162, 39, 0.5),
+        0 0 20px rgba(201, 162, 39, 0.2);
+}
+
+
+.mansion-contex p {
+
+    color: #ddd;
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    font-family: Georgia, serif;
+}
+
+
+.subtitulo {
+
+    color: #c9a227;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   ANIMACIONES MANSIÓN
+========================================================= */
+
+@keyframes aparecerImagen {
+
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes zoomCinematico {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes aparecerTexto {
+
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   POLVO CINEMATOGRÁFICO
+========================================================= */
+
+.polvo {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 4;
+}
+
+
+.polvo::before,
+.polvo::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: #D4AF37;
+
+    border-radius: 50%;
+
+    opacity: 0.5;
+
+    box-shadow:
+        120px 80px #D4AF37,
+        300px 200px #c9a227,
+        500px 100px #D4AF37,
+        700px 350px #c9a227,
+        900px 150px #D4AF37,
+        1100px 400px #c9a227;
+
+    animation:
+        flotar 15s linear infinite;
+}
+
+
+.polvo::after {
+
+    animation-duration: 22s;
+
+    opacity: 0.3;
+
+    transform: translateY(200px);
+}
+
+
+@keyframes flotar {
+
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+
+/* =========================================================
+   =========================================================
+   MÁSCARA DORADA — ESCENA DE REVELACIÓN
+   =========================================================
+   ========================================================= */
+
+.mascara-final {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    padding: 120px 20px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(212, 175, 55, 0.13),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at center,
+            rgba(80, 65, 20, 0.12),
+            transparent 55%
+        ),
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.88),
+            #000
+        );
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   HALO PRINCIPAL
+========================================================= */
+
+.brillo-mascara {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 500px;
+    height: 500px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 220, 100, 0.32),
+            rgba(212, 175, 55, 0.12) 30%,
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    animation:
+        respirarMascara 5s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+@keyframes respirarMascara {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.82);
+
+        opacity: 0.45;
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.18);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   DESTELLO DE LUZ
+========================================================= */
+
+.mascara-final::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 45%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(212, 175, 55, 0.06),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation:
+        luzMascara 10s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+@keyframes luzMascara {
+
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 150%;
+    }
+}
+
+
+/* =========================================================
+   VIÑETA DE LA MÁSCARA
+========================================================= */
+
+.mascara-final::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 25%,
+            rgba(0, 0, 0, 0.8) 100%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.mascara-contenido {
+
+    position: relative;
+
+    width: 90%;
+    max-width: 850px;
+
+    z-index: 5;
+
+    animation:
+        aparecerMascara 3s ease forwards;
+}
+
+
+@keyframes aparecerMascara {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px);
+
+        filter: blur(8px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+========================================================= */
+
+.mascara-introduccion,
+.mascara-subtitulo {
+
+    color: #D4AF37;
+
+    font-size: 13px;
+
+    letter-spacing: 8px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 10px rgba(212, 175, 55, 0.6),
+        0 0 25px rgba(212, 175, 55, 0.3);
+}
+
+
+/* =========================================================
+   LÍNEA INTRODUCCIÓN
+========================================================= */
+
+.linea-introduccion {
+
+    width: 80px;
+
+    height: 1px;
+
+    margin: 0 auto 30px;
+
+    background: #D4AF37;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.mascara-frase {
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    line-height: 2.1;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   CONTENEDOR MÁSCARA
+========================================================= */
+
+.mascara-imagen {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 370px;
+
+    margin: 0 auto 35px;
+}
+
+
+/* =========================================================
+   HALO DETRÁS DE LA MÁSCARA
+========================================================= */
+
+.halo-mascara {
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.25),
+            transparent 68%
+        );
+
+    filter: blur(12px);
+
+    animation:
+        haloRespira 4s ease-in-out infinite alternate;
+
+    z-index: -1;
+}
+
+
+@keyframes haloRespira {
+
+    from {
+
+        transform: scale(0.8);
+
+        opacity: 0.4;
+    }
+
+    to {
+
+        transform: scale(1.2);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MÁSCARA
+========================================================= */
+
+.mascara-imagen img {
+
+    display: block;
+
+    width: 320px;
+
+    max-width: 75vw;
+
+    height: auto;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 0 15px rgba(212, 175, 55, 0.7))
+        drop-shadow(0 0 35px rgba(212, 175, 55, 0.45))
+        drop-shadow(0 0 80px rgba(212, 175, 55, 0.2));
+
+    animation:
+        revelarMascara 4s ease 1s forwards,
+        mascaraFlota 6s ease-in-out 5s infinite;
+}
+
+
+@keyframes revelarMascara {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.55)
+            translateY(30px);
+
+        filter:
+            brightness(0)
+            blur(18px)
+            drop-shadow(0 0 0 transparent);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        filter:
+            brightness(1.25)
+            blur(2px)
+            drop-shadow(0 0 40px rgba(212, 175, 55, 0.9));
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        filter:
+            brightness(1)
+            blur(0)
+            drop-shadow(0 0 20px rgba(212, 175, 55, 0.7))
+            drop-shadow(0 0 60px rgba(212, 175, 55, 0.35));
+    }
+}
+
+
+@keyframes mascaraFlota {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TÍTULO DE LA MÁSCARA
+========================================================= */
+
+.mascara-contenido h2 {
+
+    color: #fff;
+
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+
+    font-weight: normal;
+
+    letter-spacing: 10px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 10px rgba(212, 175, 55, 0.5),
+        0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+
+/* =========================================================
+   HISTORIA
+========================================================= */
+
+.mascara-texto {
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #cfcfcf;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    font-family: Georgia, serif;
+}
+
+
+.mascara-texto.secundario {
+
+    color: #999;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   LÍNEA DORADA
+========================================================= */
+
+.linea-dorada {
+
+    width: 120px;
+
+    height: 1px;
+
+    margin: 0 auto 30px;
+
+    background: #D4AF37;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.8),
+        0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+
+/* =========================================================
+   FRASE FINAL MÁSCARA
+========================================================= */
+
+.mascara-final-texto {
+
+    color: #D4AF37;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    margin-top: 35px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+
+.mascara-firma {
+
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BOTÓN — DESCUBRIR EL LEGADO
+========================================================= */
+
+.boton-legado,
+.final-boton {
+
+    position: relative;
+
+    display: block;
+
+    margin: 40px auto 0;
+
+    padding: 16px 42px;
+
+    background: transparent;
+
+    border: 1px solid rgba(212, 175, 55, 0.7);
+
+    color: #D4AF37;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    animation:
+        aparecerBoton 3s ease 7s forwards;
+
+    transition:
+        color 0.5s ease,
+        background 0.5s ease,
+        box-shadow 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+.boton-legado::before,
+.final-boton::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(212, 175, 55, 0.2),
+            transparent
+        );
+
+    transition: left 0.7s ease;
+}
+
+
+.boton-legado:hover::before,
+.final-boton:hover::before {
+
+    left: 100%;
+}
+
+
+.boton-legado:hover,
+.final-boton:hover {
+
+    background: #D4AF37;
+
+    color: #000;
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.7),
+        0 0 45px rgba(212, 175, 55, 0.35);
+}
+
+
+@keyframes aparecerBoton {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   =========================================================
+   FINAL — MANSIÓN VALMONT
+   OCULTO HASTA PRESIONAR EL BOTÓN
+   =========================================================
+   ========================================================= */
+
+.final-valmont {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    padding: 120px 20px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(212, 175, 55, 0.09),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at center,
+            rgba(50, 40, 10, 0.15),
+            transparent 60%
+        ),
+
+        #000;
+
+    isolation: isolate;
+
+    /* OCULTO */
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 1.5s ease;
+}
+
+
+/* =========================================================
+   CUANDO SE ACTIVA
+========================================================= */
+
+.final-valmont.mostrar {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: scale(1);
+
+    animation:
+        entradaFinal 3s ease forwards;
+}
+
+
+@keyframes entradaFinal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(1.08);
+
+        filter: brightness(0) blur(12px);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        filter:
+            brightness(0.7)
+            blur(3px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        filter:
+            brightness(1)
+            blur(0);
+    }
+}
+
+
+/* =========================================================
+   LUZ CENTRAL DEL FINAL
+========================================================= */
+
+.final-valmont::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 700px;
+    height: 700px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.13),
+            rgba(212, 175, 55, 0.03) 40%,
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.final-valmont.mostrar::before {
+
+    animation:
+        luzFinal 8s ease-in-out 2s infinite alternate;
+}
+
+
+@keyframes luzFinal {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.75);
+
+        opacity: 0.35;
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   POLVO / ESTRELLAS DEL FINAL
+========================================================= */
+
+.final-valmont::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.75) 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.35) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        180px 180px,
+        260px 260px;
+
+    background-position:
+        0 0,
+        80px 120px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.final-valmont.mostrar::after {
+
+    animation:
+        polvoFinal 20s linear infinite,
+        aparecerPolvo 3s ease 2s forwards;
+}
+
+
+@keyframes aparecerPolvo {
+
+    to {
+        opacity: 0.28;
+    }
+}
+
+
+@keyframes polvoFinal {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-180px);
+    }
+}
+
+
+/* =========================================================
+   CONTENIDO FINAL
+========================================================= */
+
+.final-contenido {
+
+    position: relative;
+
+    width: 90%;
+    max-width: 900px;
+
+    z-index: 5;
+
+    opacity: 0;
+}
+
+
+.final-valmont.mostrar .final-contenido {
+
+    animation:
+        aparecerContenidoFinal 3s ease 1s forwards;
+}
+
+
+@keyframes aparecerContenidoFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px);
+
+        filter: blur(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   PRIMERA FRASE
+========================================================= */
+
+.final-frase {
+
+    color: #eee;
+
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+    line-height: 2;
+
+    letter-spacing: 8px;
+
+    opacity: 0;
+}
+
+
+.final-valmont.mostrar .final-frase {
+
+    animation:
+        fraseFinal 4s ease 2s forwards;
+}
+
+
+@keyframes fraseFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+        filter: blur(8px);
+    }
+
+    to {
+
+        opacity: 0.95;
+
+        transform:
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   SEGUNDO MENSAJE
+========================================================= */
+
+.final-secreto {
+
+    margin-top: 45px;
+
+    color: #999;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    letter-spacing: 5px;
+
+    opacity: 0;
+}
+
+
+.final-valmont.mostrar .final-secreto {
+
+    animation:
+        secretoFinal 4s ease 7s forwards;
+}
+
+
+@keyframes secretoFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+        filter: blur(7px);
+    }
+
+    to {
+
+        opacity: 0.8;
+
+        transform:
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   SEPARADOR DORADO
+========================================================= */
+
+.final-separador {
+
+    width: 0;
+
+    height: 1px;
+
+    margin: 55px auto;
+
+    background: #D4AF37;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.9),
+        0 0 30px rgba(212, 175, 55, 0.45);
+
+    opacity: 0;
+}
+
+
+.final-valmont.mostrar .final-separador {
+
+    animation:
+        lineaFinal 3s ease 11s forwards;
+}
+
+
+@keyframes lineaFinal {
+
+    from {
+
+        width: 0;
+
+        opacity: 0;
+    }
+
+    to {
+
+        width: 180px;
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   GRAN TÍTULO FINAL
+========================================================= */
+
+.final-contenido h2 {
+
+    color: #D4AF37;
+
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+
+    font-weight: normal;
+
+    letter-spacing: 14px;
+
+    margin-bottom: 30px;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 10px rgba(212, 175, 55, 0.7),
+        0 0 35px rgba(212, 175, 55, 0.35),
+        0 0 80px rgba(212, 175, 55, 0.15);
+}
+
+
+.final-valmont.mostrar .final-contenido h2 {
+
+    animation:
+        tituloFinal 5s ease 14s forwards;
+}
+
+
+@keyframes tituloFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.88);
+
+        letter-spacing: 28px;
+
+        filter: blur(12px);
+    }
+
+    60% {
+
+        opacity: 0.7;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        letter-spacing: 14px;
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   SUBTÍTULO FINAL
+========================================================= */
+
+.final-subtitulo {
+
+    color: #aaa;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+}
+
+
+.final-valmont.mostrar .final-subtitulo {
+
+    animation:
+        subtituloFinal 4s ease 20s forwards;
+}
+
+
+@keyframes subtituloFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+        filter: blur(5px);
+    }
+
+    to {
+
+        opacity: 0.9;
+
+        transform:
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   FRASE EXTRA FINAL
+========================================================= */
+
+.final-firma {
+
+    margin-top: 45px;
+
+    color: #D4AF37;
+
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    opacity: 0;
+}
+
+
+.final-valmont.mostrar .final-firma {
+
+    animation:
+        firmaFinal 4s ease 24s forwards;
+}
+
+
+@keyframes firmaFinal {
+
+    from {
+
+        opacity: 0;
+
+        letter-spacing: 15px;
+    }
+
+    to {
+
+        opacity: 0.65;
+
+        letter-spacing: 6px;
+    }
+}
+
+
+/* =========================================================
+   BOTÓN DEL FINAL — SI LO USAMOS DESPUÉS
+========================================================= */
+
+.final-boton {
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.final-valmont.mostrar .final-boton {
+
+    pointer-events: auto;
+
+    animation:
+        botonFinal 4s ease 27s forwards;
+}
+
+
+@keyframes botonFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero h1 {
+
+        font-size: 55px;
+
+        letter-spacing: 8px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 28px;
+    }
+
+
+    .mansion {
+
+        gap: 40px;
+
+        padding: 80px 5%;
+    }
+
+
+    .mansion-image {
+
+        width: 48%;
+    }
+
+
+    .mansion-contex {
+
+        width: 42%;
+    }
+
+
+    .mansion-image img {
+
+        height: 500px;
+    }
+
+
+    .mansion-contex h2 {
+
+        font-size: 35px;
+    }
+
+
+    .mansion-contex p {
+
+        font-size: 17px;
+    }
+
+
+    .mascara-contenido h2 {
+
+        font-size: 42px;
+
+        letter-spacing: 7px;
+    }
+
+
+    .mascara-imagen img {
+
+        width: 280px;
+    }
+
+
+    .final-contenido h2 {
+
+        font-size: 43px;
+
+        letter-spacing: 9px;
+    }
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        min-height: 600px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 38px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 22px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .presenta {
+
+        font-size: 12px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .scroll {
+
+        margin-top: 40px;
+    }
+
+
+    /* MANSIÓN */
+
+    .mansion {
+
+        flex-direction: column;
+
+        gap: 45px;
+
+        padding: 70px 7%;
+    }
+
+
+    .mansion-image {
+
+        width: 100%;
+    }
+
+
+    .mansion-contex {
+
+        width: 100%;
+    }
+
+
+    .mansion-image img {
+
+        height: 400px;
+    }
+
+
+    .mansion-contex h2 {
+
+        font-size: 32px;
+    }
+
+
+    .mansion-contex p {
+
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+
+    /* MÁSCARA */
+
+    .mascara-final {
+
+        padding: 90px 20px;
+    }
+
+
+    .mascara-introduccion,
+    .mascara-subtitulo {
+
+        font-size: 10px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .mascara-frase {
+
+        font-size: 15px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .mascara-contenido h2 {
+
+        font-size: 30px;
+
+        letter-spacing: 5px;
+
+        line-height: 1.4;
+    }
+
+
+    .mascara-imagen {
+
+        min-height: 300px;
+    }
+
+
+    .mascara-imagen img {
+
+        width: 220px;
+    }
+
+
+    .halo-mascara {
+
+        width: 250px;
+
+        height: 250px;
+    }
+
+
+    .mascara-texto {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    .mascara-final-texto {
+
+        font-size: 14px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .mascara-firma {
+
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .boton-legado {
+
+        padding: 14px 28px;
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* FINAL */
+
+    .final-valmont {
+
+        min-height: 100vh;
+
+        padding: 90px 20px;
+    }
+
+
+    .final-frase {
+
+        font-size: 17px;
+
+        letter-spacing: 5px;
+    }
+
+
+    .final-secreto {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+        line-height: 2;
+    }
+
+
+    .final-separador {
+
+        margin: 45px auto;
+    }
+
+
+    .final-contenido h2 {
+
+        font-size: 30px;
+
+        letter-spacing: 6px;
+
+        line-height: 1.5;
+    }
+
+
+    .final-subtitulo {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        line-height: 1.8;
+    }
+
+
+    .final-firma {
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .final-valmont::before {
+
+        width: 400px;
+
+        height: 400px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+
+        font-size: 30px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 18px;
+    }
+
+
+    .presenta {
+
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .mansion-image img {
+
+        height: 320px;
+    }
+
+
+    .brillo-mascara {
+
+        width: 300px;
+
+        height: 300px;
+    }
+
+
+    .mascara-imagen img {
+
+        width: 190px;
+    }
+
+
+    .final-contenido h2 {
+
+        font-size: 25px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .final-frase {
+
+        font-size: 15px;
+
+        letter-spacing: 4px;
+    }
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES SI EL DISPOSITIVO LO SOLICITA
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
